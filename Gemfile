@@ -39,6 +39,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
+  gem 'pry-byebug'
+  gem 'better_errors'
 end
 
 group :development do
@@ -60,3 +63,21 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'devise'
+gem 'kaminari'
+gem 'ransack'
+gem 'cocoon'
+gem 'simple-form-bootstrap'
+gem 'bootstrap-select-rails'
+gem 'bootstrap3-datepicker-rails'
+gem 'carrierwave'
+gem 'refile'
+gem 'bootstrap-sass'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
+gem 'faker'
+gem 'paranoia'
+gem 'bullet'
+gem 'rspec-rails'
