@@ -1,33 +1,54 @@
 class PostsController < ApplicationController
+before_action :authenticate_user!
+before_action :ensure_correct_user,{only: [:edit, :update]}
+
 	def new
 		@post = Post.new
+		@post = current_user.posts.build
 	end
 
 	def create
-		post = Post.new(blog_params)
-        post.save
-        redirect_to posts_path
+		@post = current_user.posts.build(post_params)
+    	@user = current_user
+	    if @post.save
+	      flash[:notice] = "Post was successfully  created"
+	        redirect_to posts_path(@post.id)
+	    else
+	      @posts = Post.all
+	      render template: "posts"
+	    end
 	end
 
 	def index
-		@posts = post.all
+		@posts = Post.all
 	end
 
 	def show
 		@post = Post.find(params[:id])
+		@user = @posts.user
 	end
 
 	def edit
 		@post = Post.find(params[:id])
 	end
 
-	def destroy
-		
+	def update
+    	@post = Post.find(params[:id])
+	    if @post.update(post_params)
+	      flash[:notice] = "Post was successfully updated"
+	        redirect_to posts_path
+	    else
+	      render template: "edit_post"
+	  	end
 	end
 
-	def new
-		
+	def destroy
+	    @post = Book.find(params[:id])
+	    @post.destroy
+	    redirect_to posts_path
 	end
+
+
 
 	 private
     def post_params
@@ -40,6 +61,13 @@ class PostsController < ApplicationController
       							   :movie,
       							   :memo,
       							   :route,)
+    end
+
+    def ensure_correct_user
+      @post = Post.find(params[:id])
+      if current_user != @post.user
+        redirect_to posts_path
+      end
     end
 
 end
