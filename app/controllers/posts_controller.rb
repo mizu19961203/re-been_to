@@ -4,28 +4,30 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
 
 	def new
 		@post = Post.new
-		@post = current_user.posts.build
+		# @post = current_user.posts.build
 	end
 
 	def create
-		@post = current_user.posts.build(post_params)
-    	@user = current_user
+    	@post = current_user.posts.build(post_params)
+	    @user = current_user
 	    if @post.save
 	      flash[:notice] = "Post was successfully  created"
-	        redirect_to posts_path(@post.id)
+	        redirect_to posts_path
 	    else
 	      @posts = Post.all
-	      render template: "posts"
+	      redirect_to posts_path
 	    end
+
 	end
 
 	def index
 		@posts = Post.all
+		@user = current_user
 	end
 
 	def show
-		@post = Post.find(params[:id])
-		@user = @posts.user
+		@posts = Post.find(params[:id])
+		@user = @posts_user
 	end
 
 	def edit
@@ -43,8 +45,8 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
 	end
 
 	def destroy
-	    @post = Book.find(params[:id])
-	    @post.destroy
+	    post = Post.find(params[:id])
+	    post.destroy
 	    redirect_to posts_path
 	end
 

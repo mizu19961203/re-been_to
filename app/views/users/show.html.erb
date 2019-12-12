@@ -1,0 +1,8 @@
+<h1>
+<%= @user.name%>
+<%= @user.email%>
+
+<% @user.posts.each do |post| %>
+	<p><%= post.memo %></p>
+<% end %>
+</h1>

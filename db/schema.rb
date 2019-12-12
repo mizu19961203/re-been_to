@@ -35,10 +35,10 @@ ActiveRecord::Schema.define(version: 2019_12_11_073118) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "country_id", null: false
-    t.integer "visa_id", null: false
-    t.integer "vaccine_id", null: false
+    t.integer "user_id"
+    t.integer "country_id"
+    t.integer "visa_id"
+    t.integer "vaccine_id"
     t.integer "comment_id"
     t.integer "tag_id"
     t.text "image_id"
