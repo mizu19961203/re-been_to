@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_073118) do
+ActiveRecord::Schema.define(version: 2019_12_15_114913) do
 
   create_table "admins", force: :cascade do |t|
     t.string "admin_name", null: false
@@ -44,7 +44,18 @@ ActiveRecord::Schema.define(version: 2019_12_11_073118) do
     t.text "image_id"
     t.text "movie"
     t.string "memo"
-    t.string "route"
+    t.integer "route_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "routes", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "route"
+    t.float "ori_lat"
+    t.float "ori_lng"
+    t.float "dst_lat"
+    t.float "dst_lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -77,6 +88,15 @@ ActiveRecord::Schema.define(version: 2019_12_11_073118) do
 
   create_table "visas", force: :cascade do |t|
     t.integer "visa", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "waypoints", force: :cascade do |t|
+    t.integer "route_id"
+    t.integer "waypoint"
+    t.float "poi_lat"
+    t.float "poi_lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
