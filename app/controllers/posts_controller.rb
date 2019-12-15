@@ -4,7 +4,7 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
 
 	def new
 		@post = Post.new
-		# @post = current_user.posts.build
+		@post = current_user.posts.build
 	end
 
 	def create
@@ -23,6 +23,7 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
 	def index
 		@posts = Post.all
 		@user = current_user
+
 	end
 
 	def show

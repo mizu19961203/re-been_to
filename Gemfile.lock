@@ -123,6 +123,7 @@ GEM
       rails (>= 3.1.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    gmaps4rails (2.1.2)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -344,6 +345,7 @@ DEPENDENCIES
   devise
   faker
   form-bootstrap
+  gmaps4rails
   jbuilder (~> 2.5)
   jquery-rails
   jquery-turbolinks

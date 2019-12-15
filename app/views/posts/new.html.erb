@@ -2,9 +2,8 @@
 
 <%= form_for(@post) do |f| %>
 
-    <h4>本文</h4>
+   
     <p><%= f.text_area :memo %></p>
-    <p><%= f.file_field :video %></p>
 
     <h4>画像</h4>
   	<%= f.attachment_field :image %>

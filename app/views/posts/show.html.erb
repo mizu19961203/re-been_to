@@ -1,6 +1,24 @@
-<%= @posts.memo %>
+<table>
+	<thead>
+		<tr>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @posts.memo %></td>
+			<td><%= attachment_image_tag @posts, :image, :fill, 100, 100 %></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
 
-<%= attachment_image_tag @posts, :image, :fill, 100, 100 %>
+
 
 <% if @posts.user_id == current_user.id %>
 	<%= link_to "Edit", edit_post_path %>

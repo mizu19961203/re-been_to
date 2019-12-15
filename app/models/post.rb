@@ -6,6 +6,8 @@ class Post < ApplicationRecord
 	belongs_to :user
 	# belongs_to :vaccine
 	# belongs_to :visa
+
+	
 	# mount_uploader :movie, MovieUploader
 	# validates :movie, :presence => true
 end

@@ -1,0 +1,14 @@
+<div class>
+                <% if @post.errors.any? %>
+                  <p>errorです。</p>
+                <% end %>
+				<h1>Editing</h1>
+				<%= form_for(@post) do |f| %>
+				<h4>memo</h4>
+				 <%= f.text_field :memo %>
+				 <%= f.attachment_field :image %>
+				<%= f.submit "Update Post"%>
+				<%= link_to "Show" ,post_path%> | <%= link_to "back" ,posts_path%>
+			    <% end %>
+
+</div>
