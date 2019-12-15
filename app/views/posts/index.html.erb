@@ -69,4 +69,4 @@ function codeAddress(){
   });
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ6APE8-qqRNFA30tbGyuYgrG8QluS4a0&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_API_KEY"]%>&callback=initMap" async defer></script>
