@@ -8,14 +8,14 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
 	end
 
 	def create
-    	@post = current_user.posts.build(post_params)
-	    @user = current_user
+    	@post = Post.new(post_params)
+	    @post.user_id = current_user.id
 	    if @post.save
 	      flash[:notice] = "Post was successfully  created"
 	        redirect_to posts_path
 	    else
 	      @posts = Post.all
-	      redirect_to posts_path
+	      redirect_to new_post_path
 	    end
 
 	end
@@ -59,7 +59,7 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
       							   :visa_id,
       							   :vaccine_id,
       							   :comment_id,
-      							   :image_id,
+      							   :image,
       							   :movie,
       							   :memo,
       							   :route,)

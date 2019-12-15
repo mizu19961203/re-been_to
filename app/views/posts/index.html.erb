@@ -1,16 +1,15 @@
+<%=link_to "投稿" ,  new_post_path %>
 <h1>投稿一覧</h1>
    <% @posts.each do |post| %>
-      <p>タイトル</p>
-      <div>
-      	<%=link_to post.memo , post_path(post.id) %>
-      </div>
+      <p>memo / <%=link_to post.memo , post_path(post.id) %></p>
+      <%= attachment_image_tag post, :image, :fill, 100, 100%>
    <% end %>
 
 <h1>User info
 	<p>name/<%=@user.name%></p>
 </h1>
 
-<%=link_to "投稿" ,  new_post_path %>
+
 
 
 

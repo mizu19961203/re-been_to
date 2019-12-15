@@ -1,5 +1,6 @@
 <%= @posts.memo %>
 
+<%= attachment_image_tag @posts, :image, :fill, 100, 100 %>
 
 <% if @posts.user_id == current_user.id %>
 	<%= link_to "Edit", edit_post_path %>
