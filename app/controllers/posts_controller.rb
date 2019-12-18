@@ -7,23 +7,17 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
 		@post = current_user.posts.build
 	end
 
+
 	def create
     	@post = Post.new(post_params)
 	    @post.user_id = current_user.id
-	    if @post.save
-	      flash[:notice] = "Post was successfully  created"
-	        redirect_to posts_path
-	    else
-	      @posts = Post.all
-	      redirect_to new_post_path
-	    end
-
+		@post.save
+		redirect_to posts_path
 	end
 
 	def index
 		@posts = Post.all
 		@user = current_user
-
 	end
 
 	def show
@@ -37,12 +31,8 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
 
 	def update
     	@post = Post.find(params[:id])
-	    if @post.update(post_params)
-	      flash[:notice] = "Post was successfully updated"
-	        redirect_to posts_path
-	    else
-	      render template: "edit_post"
-	  	end
+	    @post.update(post_params)
+	    redirect_to posts_path
 	end
 
 	def destroy
@@ -57,13 +47,16 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
     def post_params
       params.require(:post).permit(:user_id,
       							   :country_id,
-      							   :visa_id,
+      							   :visa,
       							   :vaccine_id,
       							   :comment_id,
       							   :image,
       							   :movie,
       							   :memo,
-      							   :route,)
+      							   :route_id,
+      							   :depature_date,
+      							   :return_date
+      							   )
     end
 
     def ensure_correct_user

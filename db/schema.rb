@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_15_114913) do
+ActiveRecord::Schema.define(version: 2019_12_18_085538) do
 
   create_table "admins", force: :cascade do |t|
     t.string "admin_name", null: false
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2019_12_15_114913) do
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.integer "country_id"
-    t.integer "visa_id"
     t.integer "vaccine_id"
     t.integer "comment_id"
     t.integer "tag_id"
@@ -47,6 +46,11 @@ ActiveRecord::Schema.define(version: 2019_12_15_114913) do
     t.integer "route_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "depature_date"
+    t.date "return_date"
+    t.integer "visa"
+    t.string "ori_place"
+    t.string "dst_place"
   end
 
   create_table "routes", force: :cascade do |t|
@@ -81,13 +85,7 @@ ActiveRecord::Schema.define(version: 2019_12_15_114913) do
 
   create_table "vaccines", force: :cascade do |t|
     t.integer "vaccine"
-    t.integer "sel_vac", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "visas", force: :cascade do |t|
-    t.integer "visa", null: false
+    t.integer "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

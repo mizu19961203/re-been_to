@@ -5,10 +5,7 @@ class Post < ApplicationRecord
 	# has_many :routes
 	# belongs_to :country
 	belongs_to :user
-	# belongs_to :vaccine
-	# belongs_to :visa
-
-	
-	# mount_uploader :movie, MovieUploader
+	belongs_to :vaccine
+	# mount_uploader :movie, MovieUpload
 	# validates :movie, :presence => true
 end

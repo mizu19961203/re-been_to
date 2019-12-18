@@ -84,5 +84,4 @@ gem 'faker'
 gem 'paranoia'
 gem 'bullet'
 gem 'rspec-rails'
-#gem 'dotenv-rails'
-
+gem 'geocoder'
