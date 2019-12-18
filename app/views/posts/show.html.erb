@@ -4,7 +4,7 @@
     <p><%= attachment_image_tag @posts, :image, :fill, 100, 100 %></p>
     <p><%= @posts.depature_date %> ~ <%= @posts.return_date %></p>
     <p><% if @posts.visa %>◯<% else %>×<% end %></p>
-    <p></p>
+    <p><%= Vaccine.find(@posts.vaccine_id).name %></p>
     <p></p>
 </div>
 

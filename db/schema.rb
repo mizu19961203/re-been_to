@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_085538) do
+ActiveRecord::Schema.define(version: 2019_12_18_092744) do
 
   create_table "admins", force: :cascade do |t|
     t.string "admin_name", null: false
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_085538) do
 
   create_table "vaccines", force: :cascade do |t|
     t.integer "vaccine"
-    t.integer "name", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

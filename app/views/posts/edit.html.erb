@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <th>ワクチン</th>
-                <td><%= f.select :vaccine_id, Vaccine.pluck(:sel_vac,:id) %></td>
+                <td><%= f.select :vaccine_id, Vaccine.pluck(:name,:id) %></td>
             </tr>
         </tbody>
     </table>
