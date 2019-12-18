@@ -23,6 +23,8 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
 	def show
 		@posts = Post.find(params[:id])
 		@user = @posts_user
+		@comment = Comment.new
+    	@comments = @posts.comments
 	end
 
 	def edit
