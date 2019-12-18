@@ -1,9 +1,8 @@
 <h1>
-<%= @user.name%>
-<%= @user.email%>
-
 <% @user.posts.each do |post| %>
-	<p><%= post.memo %></p>
+	<p><%= link_to post.memo,  post_path(post.id) %></p>
+	<p><%= attachment_image_tag post, :image, :fill, 100, 100%></p>
 <% end %>
+
 </h1>
 

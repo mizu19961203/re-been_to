@@ -12,12 +12,8 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
-      flash[:notice] = "Post was successfully updated"
-        redirect_to user_path(current_user)
-    else
-      render template: edit_user_path
-    end
+    @user.update(user_params)
+    redirect_to user_path(current_user)
   end
 
   private
