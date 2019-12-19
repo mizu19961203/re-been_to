@@ -1,7 +1,4 @@
 <div class>
-	<% if @post.errors.any? %>
-	 <p>errorです。</p>
-	<% end %>
 	<h1>Editing</h1>
 	<%= form_with(model: @post, url: post_path, method: :patch) do |f| %>
 	<table class="table">

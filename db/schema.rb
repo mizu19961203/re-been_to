@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_115250) do
+ActiveRecord::Schema.define(version: 2019_12_19_104311) do
 
   create_table "admins", force: :cascade do |t|
     t.string "admin_name", null: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_115250) do
     t.integer "visa"
     t.string "ori_place"
     t.string "dst_place"
+    t.string "vaccine"
   end
 
   create_table "routes", force: :cascade do |t|
@@ -88,6 +89,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_115250) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "post_id"
   end
 
   create_table "waypoints", force: :cascade do |t|

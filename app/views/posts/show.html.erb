@@ -1,11 +1,11 @@
 <div>
-    <p><%= link_to @posts.user.name , user_path %></p>
+    <p><%= link_to @posts.user.name , user_path(@posts.user_id) %></p>
     <p><%= @posts.memo %></p>
     <p><%= attachment_image_tag @posts, :image, :fill, 100, 100 %></p>
     <p><%= @posts.depature_date %> ~ <%= @posts.return_date %></p>
     <p><% if @posts.visa %>◯<% else %>×<% end %></p>
     <p><%= Vaccine.find(@posts.vaccine_id).name %></p>
-    <p></p>
+    <p><%= Country.find(@posts.country_id).country %></p>
 </div>
 
 <div>

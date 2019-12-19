@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
 	attachment :image
+	validates :image, presence: true
 	has_many :comments, dependent: :destroy
 	# has_many :tags
 	# has_many :routes

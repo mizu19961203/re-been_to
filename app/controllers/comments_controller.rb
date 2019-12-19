@@ -3,8 +3,8 @@ class CommentsController < ApplicationController
     @posts = Post.find(params[:post_id])
     @comment = @posts.comments.build(comment_params)
     @comment.user_id = current_user.id
-	@user = @posts_user
-	@comments = @posts.comments
+  	@user = @posts_user
+  	@comments = @posts.comments
     @comment.save
   end
 

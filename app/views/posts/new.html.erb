@@ -2,6 +2,7 @@
 
 
 <%= form_with(model: @post, url: posts_path, method: :post) do |f| %>
+<%= render 'layouts/error_messages', model: f.object %>
 	<table class="table">
         <tbody>
         	<tr>
@@ -30,13 +31,13 @@
             <tr>
                 <th>ワクチン</th>
                 <td><%= f.select :vaccine_id, Vaccine.pluck(:name,:id) %></td>
+
+
+
+
+
+                
             </tr>
-
-
-
-
-
-
 
         </tbody>
     </table>
