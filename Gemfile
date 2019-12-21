@@ -85,6 +85,7 @@ gem 'paranoia'
 gem 'bullet'
 gem 'rspec-rails'
 gem 'geocoder'
+gem 'gmaps4rails'
 
 group :production do
   gem 'mysql2'

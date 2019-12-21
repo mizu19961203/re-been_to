@@ -34,19 +34,25 @@
 
         </tbody>
     </table>
+
+
+
+
+    <%= f.text_field :city_address, class:"city_address" %>
+    <%= button{id:"searchAddressBtn", value:"検索", type:"button"} %>
+      場所を検索
+
+      地図の描画
+  #map{:style => "width: 100%; height: 160px;"}
+            <%= f.text_field :latitude, readonly:"readonly" %>   //緯度の表示
+            <%= f.text_field :longitude, readonly:"readonly"　%>  //経度の表示
+
+//省略
+
+//上記緯度と経度を店舗の情報と一緒にテーブルに保存する
+
+
 <%= f.submit '投稿' %>
 <% end %>
-
-
-
-<!-- 地名入力用のinputを追加 -->
-    <input id="address" type="textbox" value="Sydney, NSW">
-
-    <!-- buttonをクリックしたらcodeAddressを実行　-->
-    <input type="button" value="Encode" onclick="codeAddress()">
-    <div id='map'>
-    </div>
-
-
 
 
