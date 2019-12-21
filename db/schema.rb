@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_19_104311) do
+ActiveRecord::Schema.define(version: 2019_12_20_003206) do
 
   create_table "admins", force: :cascade do |t|
     t.string "admin_name", null: false
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 2019_12_19_104311) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.integer "country_id"
@@ -52,6 +59,7 @@ ActiveRecord::Schema.define(version: 2019_12_19_104311) do
     t.string "ori_place"
     t.string "dst_place"
     t.string "vaccine"
+    t.integer "favs_count"
   end
 
   create_table "routes", force: :cascade do |t|

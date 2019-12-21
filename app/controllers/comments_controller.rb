@@ -5,7 +5,9 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
   	@user = @posts_user
   	@comments = @posts.comments
-    @comment.save
+    if @comment.save
+      render :index
+    end
   end
 
   def destroy
