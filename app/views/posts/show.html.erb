@@ -7,6 +7,7 @@
     <p>ビザ:<% if @post.visa %>◯<% else %>×<% end %></p>
     <p>ワクチン:<%= Vaccine.find(@post.vaccine_id).name %></p>
     <p>メモ:<%= @post.memo %></p>
+    <p><%= video_tag @post.video_url.to_s,loop: true, controls: true, width: 550, id: "mv"%></p>
 </div>
 
 <div>
