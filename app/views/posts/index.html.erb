@@ -8,14 +8,14 @@
 				<%= link_to attachment_image_tag(post, :image, :fill, 300, 300,format: 'jpeg',
 					fallback: "no_image.png",size: "300x300" ), post_path(post.id) %>
 				<p><%=link_to Country.find(post.country_id).country , post_path(post.id) %> |
-					   <%=link_to post.memo , post_path(post.id) %></p>
+					<%=link_to post.memo , post_path(post.id) %></p>
 			</div>
 		<% end %>
     	</div>
    </div>
    <div class="row">
     	<% @posts.each do |post| %>
-	    	<div class="under-box">
+	    	<div class="box">
 				<%= link_to attachment_image_tag(post, :image, :fill, 260, 260,format: 'jpeg',
 				fallback: "no_image.png",size: "260x260" ), post_path(post.id) %>
 				<%=link_to Country.find(post.country_id).country , post_path(post.id) %>
