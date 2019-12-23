@@ -12,12 +12,12 @@
  <body>
  	<header class="header">
 	   	<div class="row" style="width:70%; margin:0 auto; padding: 40px; position: center;">
-	   		<div class="col-sm-2">
-	   			<p="title" style="font-size: 50px;">Been_to</p>
+	   		<div class="navbar-left">
+	   			<p class= "title" style="font-size: 50px;">Been_to</p>
 	   		</div>
-	   		<div class="col-sm- col-sm-offset-5" style="position: center;">
+	   		<div class="col-sm-offset-5" style="position: center;">
 	   		</style>
-			       <ul class="navbar-nav nav">
+			       <ul class="navbar-nav navbar-right nav">
 			        <% if user_signed_in? %>
 			            <li>
 			              <%= link_to ' MyPage ',user_path(current_user), class: "glyphicon glyphicon-user"%>
