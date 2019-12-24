@@ -1,51 +1,31 @@
-<h1>新規投稿</h1>
-
-
-<%= form_with(model: @post, url: posts_path, method: :post) do |f| %>
-<%= render 'layouts/error_messages', model: f.object %>
-	<table class="table">
-        <tbody>
-        	<tr>
-                <th>画像</th>
-                <td><%= f.attachment_field :image %></td>
-            </tr>
-            <tr>
-                <th>国名</th>
-                <td><%= f.collection_select :country_id, Country.all,:id,:country %></td>
-            </tr>
-            <tr>
-                <th>滞在期間</th>
-                <td><%= f.date_select :depature_date, use_month_numbers: true , start_year: 1930 %> ~ <%= f.date_select :return_date, use_month_numbers: true , start_year: 1930 %></td>
-            </tr>
-            <tr>
-                <th>ビザ</th>
-                <td>
-                    <label><%= f.radio_button :visa, :true, checked: true %> 有</label>
-                    <label><%= f.radio_button :visa, :false %> 無</label>
-                </td>
-            </tr>
-            <tr>
-                <th>ワクチン</th>
-                <td><%= f.select :vaccine_id, Vaccine.pluck(:name,:id) %></td>
-            </tr><tr>
-                <th>メモ</th>
-                <td><%= f.text_area :memo %></td>
-            </tr>
-            <tr>
-                <th>動画:15sec</th>
-                <td><%= f.file_field :video %></td>
-            </tr>
-
-        </tbody>
-    </table>
-
-
-
-
-
-
-
-<%= f.submit '投稿' %>
-<% end %>
-
-
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 col-sm-offset-2">
+            <h1>New-post</h1>
+            <%= form_with(model: @post, url: posts_path, method: :post) do |f| %>
+            <%= render 'layouts/error_messages', model: f.object %>
+            <p class="edit-picture">画像<%= f.attachment_field :image %></p>
+            <p class="edit-picture">動画 15sec<%= f.file_field :video %></p>
+        </div>
+        <div class="col-sm-5 col-sm-offset-1">
+            <div class="edit-content">
+                <p class="edit-text">国名 <%= f.collection_select :country_id, Country.all,:id,:country %></p>
+                <p class="edit-text">滞在期間 : <%= f.date_select :depature_date, use_month_numbers: true , start_year: 1930 %>
+                                                 ~ <%= f.date_select :return_date, use_month_numbers: true , start_year: 1930 %>
+                </p>
+                <p class="edit-text">ビザ : <label><%= f.radio_button :visa, :true, checked: true %> 有</label>
+                                              <label><%= f.radio_button :visa, :false %> 無</label>
+                </p>
+                <p class="edit-text">ワクチン : <%= f.select :vaccine_id, Vaccine.pluck(:name,:id) %></p>
+                <p class="edit-text">メモ : <%= f.text_area :memo %></p>
+            </div>
+        </div>
+        <div class="col-sm-3 col-sm-offset-7">
+            <div class="edit-action">
+                <h4><%= f.submit '投稿' %>
+                </h4>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
