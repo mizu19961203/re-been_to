@@ -4,18 +4,15 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
 
 	def new
 		@post = Post.new
-		@post = current_user.posts.build
+		#@post = current_user.posts.build
 	end
 
 
 	def create
     	@post = Post.new(post_params)
 	    @post.user_id = current_user.id
-		if @post.save
-			redirect_to posts_path
-		else
-			render new_post_path
-		end
+		@post.save
+		redirect_to posts_path
 	end
 
 	def index
@@ -61,7 +58,8 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
       							   :memo,
       							   :route_id,
       							   :depature_date,
-      							   :return_date)
+      							   :return_date,
+      							   :video)
     end
 
     def ensure_correct_user

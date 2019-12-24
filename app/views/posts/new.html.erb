@@ -1,9 +1,9 @@
 <div class="container">
     <div class="row">
+        <%= form_with(model: @post, url: posts_path, method: :post) do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
         <div class="col-sm-3 col-sm-offset-2">
             <h1>New-post</h1>
-            <%= form_with(model: @post, url: posts_path, method: :post) do |f| %>
-            <%= render 'layouts/error_messages', model: f.object %>
             <p class="edit-picture">画像<%= f.attachment_field :image %></p>
             <p class="edit-picture">動画 15sec<%= f.file_field :video %></p>
         </div>
@@ -22,10 +22,9 @@
         </div>
         <div class="col-sm-3 col-sm-offset-7">
             <div class="edit-action">
-                <h4><%= f.submit '投稿' %>
-                </h4>
-                <% end %>
+            <h4><%= f.submit '投稿' %></h4>
             </div>
         </div>
+        <% end %>
     </div>
 </div>
