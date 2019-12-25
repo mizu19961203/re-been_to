@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_21_124836) do
+ActiveRecord::Schema.define(version: 2019_12_25_034424) do
 
   create_table "admins", force: :cascade do |t|
     t.string "admin_name", null: false
@@ -34,53 +34,19 @@ ActiveRecord::Schema.define(version: 2019_12_21_124836) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "favorites", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
     t.integer "country_id"
     t.integer "vaccine_id"
     t.integer "comment_id"
-    t.integer "tag_id"
     t.text "image_id"
-    t.text "movie"
     t.string "memo"
-    t.integer "route_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "depature_date"
     t.date "return_date"
     t.integer "visa"
-    t.string "ori_place"
-    t.string "dst_place"
-    t.string "vaccine"
-    t.integer "favs_count"
-    t.float "latitude"
-    t.float "longitude"
     t.string "video"
-    t.string "videos"
-  end
-
-  create_table "routes", force: :cascade do |t|
-    t.integer "post_id"
-    t.integer "route"
-    t.float "ori_lat"
-    t.float "ori_lng"
-    t.float "dst_lat"
-    t.float "dst_lng"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tags", force: :cascade do |t|
-    t.string "tag", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -102,15 +68,6 @@ ActiveRecord::Schema.define(version: 2019_12_21_124836) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "post_id"
-  end
-
-  create_table "waypoints", force: :cascade do |t|
-    t.integer "route_id"
-    t.integer "waypoint"
-    t.float "poi_lat"
-    t.float "poi_lng"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
