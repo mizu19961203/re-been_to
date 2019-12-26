@@ -69,7 +69,7 @@
 .mv {
   width: 100%;
   height: 700px;
-  background-image: url(/images/IMG_9229.jpg);
+  background-image: image-url('IMG_9229.jpg');
   background-size: cover;
   .mv-content {
    		width: 40%;
@@ -98,24 +98,31 @@
     height: 450px;
 }
 .image1 {
-background-image: url(/images/IMG_9489.jpg);
+background-image: image-url('IMG_9489.jpg');
+height: 500px;
 }
 .image2 {
-background-image: url(/images/E654D27F-8B1D-41CE-B3BC-00FC1A533306.jpg);
+background-image: image-url('E654D27F-8B1D-41CE-B3BC-00FC1A533306.jpg');
+height: 500px;
 }
 .image3 {
-background-image: url(/images/test1.jpg);
+background-image: image-url('test1.jpg');
+height: 500px;
 }
 .image4 {
-background-image: url(/images/IMG_8865.jpg);
+background-image: image-url('IMG_8865.jpg');
+height: 500px;
 }
 .image5 {
-background-image: url(/images/test2.jpg);
+background-image: image-url('test2.jpg');
+height: 500px;
 }
 .image6 {
-background-image: url(/images/IMG_9229.jpg);
+background-image: image-url('IMG_9229.jpg');
+height: 500px;
 }
 .image7 {
-background-image: url(/images/IMG_1504.jpeg);
+background-image: image-url('IMG_1504.jpeg');
+height: 500px;
 }
 
