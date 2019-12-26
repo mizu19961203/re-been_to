@@ -16,7 +16,7 @@
     	<% @posts.each do |post| %>
 	    	<div class="box">
 				<%= link_to attachment_image_tag(post, :image, :fill, 260, 260,format: 'jpeg',
-				fallback: "no_image.png",size: "260x260" ), post_path(post.id) %>
+				fallback: "/images/no_image.png",size: "260x260" ), post_path(post.id) %>
 				<%=link_to Country.find(post.country_id).country , post_path(post.id) %>
 			</div>
 		<% end %>
