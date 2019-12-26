@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require_tree ../../../app/assets/stylesheets/.
  *= require_self
  */
 
@@ -92,5 +93,29 @@
    }
 }
 
-
+// slide
+#slide{
+    height: 450px;
+}
+.image1 {
+background-image: url(IMG_9489.jpg);
+}
+.image2 {
+background-image: url(E654D27F-8B1D-41CE-B3BC-00FC1A533306.jpg);
+}
+.image3 {
+background-image: url(test1.jpg);
+}
+.image4 {
+background-image: url(IMG_8865.jpg);
+}
+.image5 {
+background-image: url(test2.jpg);
+}
+.image6 {
+background-image: url(IMG_9229.jpg);
+}
+.image7 {
+background-image: url(IMG_1504.jpeg);
+}
 
