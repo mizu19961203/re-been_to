@@ -54,9 +54,7 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
       							   :vaccine_id,
       							   :comment_id,
       							   :image,
-      							   :movie,
       							   :memo,
-      							   :route_id,
       							   :depature_date,
       							   :return_date,
       							   :video)

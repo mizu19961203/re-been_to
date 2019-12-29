@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('turbolinks:load', function () {
     $("#slide").skippr({
         transition : 'fade',
         speed : 1700,
