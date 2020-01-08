@@ -13,40 +13,41 @@
  	<header class="header">
 	   	<div class="row" style="width:70%; margin:0 auto; padding: 40px 30px; position: center;">
 	   		<div class="navbar-left">
-	   			<%= link_to ' Been_to ', posts_path, :style => "font-size: 50px;　"%>
+	   			<%= link_to ' Been_to ', posts_path, :style => "font-size: 50px;"%>
 	   		</div>
-	   		<div class="col-sm-offset-5" style="position: center;">
-	   		</style>
-			       <ul class="navbar-nav navbar-right nav">
-			        <% if user_signed_in? %>
-			            <li>
-			              <%= link_to ' MyPage ',user_path(current_user), class: "glyphicon glyphicon-user"%>
-			            </li>
-			            <li>
-			            	<%=link_to " NewPost " ,new_post_path, class: "glyphicon glyphicon-edit" %>
-			            </li>
-			            <li>
-			               <%= link_to ' Lists ',posts_path, class: "glyphicon glyphicon-book"%>
-			            </li>
-			            <li>
-			               <%= link_to ' Logout ',destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out"%>
-			            </li>
-			        <% else %>
-			            <li>
-			               <%= link_to ' Home ',root_path, class: "glyphicon glyphicon-home"%>
-			            </li>
-			            <li>
-			               <%= link_to ' About ',home_about_path, class: "glyphicon glyphicon-home"%>
-			            </li>
-			            <li>
-			              <%= link_to ' Sign-up  ',new_user_registration_path, class: "glyphicon glyphicon-edit"%>
-			            </li>
-			            <li>
-			              <%= link_to ' Sign-in ',new_user_session_path, class: "glyphicon glyphicon-log-in"%>
-			            </li>
-			        <% end %>
-			       </ul>
+	   		<div class="col-sm-offset-5" style="position: center; ">
+	   		<div class="header-content">
+	   		   <ul class="navbar-nav navbar-right nav">
+		        <% if user_signed_in? %>
+		            <li>
+		              <%= link_to ' MyPage ',user_path(current_user), class: "glyphicon glyphicon-user"%>
+		            </li>
+		            <li>
+		            	<%=link_to " NewPost " ,new_post_path, class: "glyphicon glyphicon-edit" %>
+		            </li>
+		            <li>
+		               <%= link_to ' Lists ',posts_path, class: "glyphicon glyphicon-book"%>
+		            </li>
+		            <li>
+		               <%= link_to ' Logout ',destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out"%>
+		            </li>
+		        <% else %>
+		            <li>
+		               <%= link_to ' Home ',root_path, class: "glyphicon glyphicon-home"%>
+		            </li>
+		            <li>
+		               <%= link_to ' About ',home_about_path, class: "glyphicon glyphicon-home"%>
+		            </li>
+		            <li>
+		              <%= link_to ' Sign-up  ',new_user_registration_path, class: "glyphicon glyphicon-edit"%>
+		            </li>
+		            <li>
+		              <%= link_to ' Sign-in ',new_user_session_path, class: "glyphicon glyphicon-log-in"%>
+		            </li>
+		        <% end %>
+		       </ul>
 	   		</div>
+			</div>
 	  	</div>
     </header>
  	<%= yield %>
