@@ -34,8 +34,8 @@
 	width:292px;
 	height: 292px;
 	float: left;
-  	padding: 10px;
-  	text-align: center;
+  padding: 10px;
+  text-align: center;
 }
 
 // post.show
@@ -117,6 +117,20 @@
       .image7 {
       background-image: image-url('IMG_1504.jpeg');
       }
+}
+
+@media screen and (max-width:425px) {
+    .title {
+      text-align: center;
+    }
+    .box {
+      width: 60%;
+      height: 60%;
+      float: center;
+      padding: 20px;
+      text-align: center;
+    }
+
 }
 
 

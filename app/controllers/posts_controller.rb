@@ -16,7 +16,7 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
 	end
 
 	def index
-		@posts = Post.all
+		@posts = Post.page(params[:page]).per(12)
 		@user = current_user
 	end
 
