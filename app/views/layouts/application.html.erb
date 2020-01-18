@@ -11,14 +11,9 @@
 
  <body>
  	<header class="header">
-	   	<div class="row" style="width:70%; margin:0 auto; padding: 40px 30px; position: center;">
-	   		<div class="navbar-left">
-	   			<%= link_to ' Been_to ', posts_path, :style => "font-size: 50px;"%>
-	   		</div>
-	   		<div class="col-sm-offset-5" style="position: center; ">
-	   		<div class="header-content">
-	   		   <ul class="navbar-nav navbar-right nav">
-		        <% if user_signed_in? %>
+	   	<div class="row" style="width:70%; margin:0 auto; padding: 20px;">
+	       	<ul class="navbar-nav nav">
+	       		<% if user_signed_in? %>
 		            <li>
 		              <%= link_to ' MyPage ',user_path(current_user), class: "glyphicon glyphicon-user"%>
 		            </li>
@@ -45,9 +40,7 @@
 		              <%= link_to ' Sign-in ',new_user_session_path, class: "glyphicon glyphicon-log-in"%>
 		            </li>
 		        <% end %>
-		       </ul>
-	   		</div>
-			</div>
+	       	</ul>
 	  	</div>
     </header>
  	<%= yield %>

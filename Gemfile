@@ -81,7 +81,6 @@ gem 'jquery-rails'
 gem 'faker'
 gem 'paranoia'
 gem 'bullet'
-gem 'rspec-rails'
 gem 'geocoder'
 group :production do
   gem 'mysql2'

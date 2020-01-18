@@ -1,7 +1,6 @@
 <div class="container">
     <div class="row">
         <%= form_with(model: @post, url: posts_path, method: :post) do |f| %>
-        <%= render 'layouts/error_messages', model: f.object %>
         <div class="col-sm-3 col-sm-offset-2">
             <h1>New-post</h1>
             <p class="edit-picture">画像<%= f.attachment_field :image %></p>
