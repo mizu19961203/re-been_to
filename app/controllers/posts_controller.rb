@@ -1,10 +1,8 @@
 class PostsController < ApplicationController
-before_action :authenticate_user!
-before_action :ensure_correct_user,{only: [:edit, :update]}
+before_action :authenticate_user!,:ensure_correct_user,{only: [:edit, :update]}
 
 	def new
 		@post = Post.new
-		#@post = current_user.posts.build
 	end
 
 
@@ -18,8 +16,9 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
 	def index
 		@posts = Post.page(params[:page]).per(12)
 		@user = current_user
+		#検索フォーム用
+	    @vaccines_search = Vaccine.all
 	end
-
 
 	def show
 		@post = Post.find(params[:id])
@@ -44,20 +43,28 @@ before_action :ensure_correct_user,{only: [:edit, :update]}
 	    redirect_to posts_path
 	end
 
+	def search
+		#検索結果
+		@posts = Post.post_search(params).page(params[:page]).per(12)
+		render :index
+	end
 
 
-	 private
+
+	private
     def post_params
-      params.require(:post).permit(:user_id,
-      							   :country_id,
-      							   :visa,
-      							   :vaccine_id,
-      							   :comment_id,
-      							   :image,
-      							   :memo,
-      							   :depature_date,
-      							   :return_date,
-      							   :video)
+      	params.require(:post).permit(:user_id,
+	  							     :country_id,
+	  							     :visa,
+	  							     :vaccine_id,
+	  							     :comment_id,
+	  							     :image,
+	  							     :memo,
+	  							     :depature_date,
+	  							     :return_date,
+	  							     :video)
+
+      	params.require(:q).permit(:name,:vaccine_id)
     end
 
     def ensure_correct_user
