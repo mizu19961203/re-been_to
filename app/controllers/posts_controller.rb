@@ -63,8 +63,6 @@ before_action :authenticate_user!,:ensure_correct_user,{only: [:edit, :update]}
 	  							     :depature_date,
 	  							     :return_date,
 	  							     :video)
-
-      	params.require(:q).permit(:name,:vaccine_id)
     end
 
     def ensure_correct_user
