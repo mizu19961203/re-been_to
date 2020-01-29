@@ -16,20 +16,25 @@ User.create!(
     {
       email: 'test1@test.com',
       password: '111111',
-      name: 'テスト太郎',
+      name: 'テスト太郎1',
     },
     {
       email: 'test2@test.com',
       password: '222222',
-      name: 'テスト徹子',
+      name: 'テスト徹子2',
     },
     {
       email: 'test3@test.com',
       password: '333333',
-      name: 'テスト正男',
+      name: 'テスト正男3',
     }
   ]
 )
+
+Admin.create!(
+	name:  "管理者test",
+    email: "admin@admin",
+    password:  "111111")
 
 
 countries = [

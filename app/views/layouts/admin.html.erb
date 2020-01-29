@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>管理画面</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="row admin" style="background-color: #232F3E; color:white; padding: 10px;">
+        <div class="col-sm-offset-4">
+        </div>
+        <div class="col-sm-8">
+            <ul class="navbar-nav nav" style="color: white; padding: 15px; padding-bottom: 0;">
+              <li style="margin-right: 30px; color: #cccccc;">　　　
+                <span style="color:orange;">
+                  ようこそ <%= current_admin.name %>
+                </span> さん</li>
+            </ul>
+
+            <ul class="navbar-nav nav" style="color: white">
+              <li><%= link_to "サイトTOP", posts_path %></li>
+              <li><%= link_to "ログアウト", destroy_admin_session_path , method: :delete %></li>
+              <li><%= link_to "投稿一覧", admin_posts_path %></li>
+              <li><%= link_to "ユーザー", admin_users_path %></li>
+              <li><%= link_to "投稿マスタ", admin_info_index_path %></li>
+              <li><%= link_to "管理者情報", edit_admin_registration_path %></li>
+            </ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="admin">
+      <%= yield %>
+    </div>
+  </body>
+</html>

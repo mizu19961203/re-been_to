@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+    	<div class= "col-xs-12">
+    		<div class="user-content">
+    			<% @posts.each do |post| %>
+		    	<div class="user-box">
+				<%= link_to attachment_image_tag(post, :image, :fill, 300, 300,format: 'jpeg',
+					fallback: "no_image.png",size: "300x300" ), admin_post_path(post.id) %>
+				<p style="font-size: 20px;">
+					<%= link_to Country.find(post.country_id).country , admin_post_path(post.id)  %>
+				</p>
+		    	</div>
+		    	<% end %>
+    		</div>
+    	</div>
+    </div>
+</div>

@@ -18,6 +18,7 @@ before_action :authenticate_user!,:ensure_correct_user,{only: [:edit, :update]}
 		@user = current_user
 		#検索フォーム用
 	    @vaccines_search = Vaccine.all
+	    @countries_search = Country.all
 	end
 
 	def show

@@ -3,6 +3,8 @@
   <%= form_tag(search_path, method: :get) do %>
     <p class="search_text">Vaccines</p>
     <p class="search_text"><%= collection_select(:vaccine, :id, Vaccine.all, :id, :name,:include_blank => '指定なし') %></p>
+    <p class="search_text">Countries</p>
+    <p class="search_text"><%= collection_select(:country, :id, Country.all, :id, :country,:include_blank => '指定なし') %></p>
     <p class="search_bottun"><%= submit_tag "検索" %></p>
   <% end %>
 </div>
