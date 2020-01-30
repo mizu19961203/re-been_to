@@ -32,7 +32,7 @@ User.create!(
 )
 
 Admin.create!(
-	name:  "管理者test",
+	name:  "test管理者",
     email: "admin@admin",
     password:  "111111")
 
