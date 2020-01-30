@@ -1,0 +1,85 @@
+<div class="container">
+  <h1 class="page-title">投稿マスタ</h1><br>
+  <div style="width: 50%">
+    <select name="select-master">
+      <option value="-">選択してください</option>
+      <option value="vaccine" selected>ワクチン</option>
+      <option value="country">国名</option>
+    </select>
+    <span>を表示</span>
+
+    <div class="vaccine-form">
+      <%= form_for (@vaccine), url: admin_vaccine_index_path do |f| %>
+          <%= f.text_field :name, :placeholder => "ワクチン" %>
+          <%= f.submit "登録", class: "btn btn-sm" %>
+      <% end %>
+    </div>
+
+    <div class="country-form">
+      <%= form_for (@country), url: admin_country_index_path do |f| %>
+          <%= f.text_field :country, :placeholder => "国名" %>
+          <%= f.submit "登録", class: "btn btn-sm" %>
+      <% end %>
+    </div>
+
+    <table class="table vaccine-form">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th style="width:300px">ワクチン名</th>
+          </tr>
+      </thead>
+      <tbody>
+        <% @vaccines.each do |vaccine| %>
+          <tr>
+            <td><%= vaccine.id %></td>
+            <td><%= vaccine.name %></td>
+            <td><%= link_to "編集", edit_admin_vaccine_path(vaccine.id) %></td>
+            <td><%= link_to "削除", admin_info_path(vaccine,"vaccine"), method: :delete,"data-confirm" => "本当に削除しますか？" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
+    <table class="table country-form">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th style="width:300px">国名</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @countries.each do |country| %>
+        <tr>
+          <td><%= country.id %></td>
+          <td><%= country.country %></td>
+          <td><%= link_to "編集", edit_admin_country_path(country.id) %></td>
+          <td><%= link_to "削除", admin_info_path(country,"couintry"), method: :delete,"data-confirm" => "本当に削除しますか？" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+$(function(){
+  $('[name=select-master]').change(function() {
+    var text = $('option:selected').text();
+    console.log( text );
+    $('.vaccine-form').hide();
+    $('.country-form').hide();
+
+    if (text == 'ワクチン') {
+      console.log("aaaa");
+      $('.vaccine-form').show();
+    } else if (text == '国名') {
+      $('.country-form').css('display',' inline-table');
+    }
+  });
+});
+</script>
+
+

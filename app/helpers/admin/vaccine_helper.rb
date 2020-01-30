@@ -1,0 +1,2 @@
+module Admin::VaccineHelper
+end

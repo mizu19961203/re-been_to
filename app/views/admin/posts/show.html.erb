@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-1">
+            <%= attachment_image_tag(@post, :image, :fill, 300, 300, format: 'jpeg',fallback: "no_image.png",size: "300x300" ) %>
+            <p class="video">
+                <%= video_tag @post.video_url.to_s,loop: true, controls: true, width: 300, id: "mv"%>
+            </p>
+        </div>
+        <div class="col-sm-7">
+            <div class="text">
+                <p class="show-content">
+                    <%= link_to "編集", edit_admin_post_path %> |
+                    <%= link_to "削除", admin_posts_path ,  method: :delete ,"data-confirm" => "本当に削除しますか？"%>
+                </p>
+                <p class="show-content">by : <%= link_to @post.user.name , user_path(@post.user_id) %></p>
+                <p class="show-content">国名 : <%= Country.find(@post.country_id).country %></p>
+                <p class="show-content">期間 : <%= @post.depature_date %> ~ <%= @post.return_date %></p>
+                <p class="show-content">ビザ : <% if @post.visa %>◯<% else %>×<% end %></p>
+                <p class="show-content">ワクチン : <%= Vaccine.find(@post.vaccine_id).name %></p>
+                <p class="show-content">メモ : <%= @post.memo %></p>
+            </div>
+        </div>
+    </div>
+</div>

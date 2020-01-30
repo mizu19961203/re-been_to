@@ -1,0 +1,7 @@
+<div class="container">
+	<h1 class="page-title">ワクチン編集</h1>
+	<%= form_with model: @vaccine, url: admin_vaccine_path(params[:id]), local: true do |f| %>
+	<p><%= f.text_field :name %></p>
+	<%= f.submit "更新", class: "btn btn-sm" %>
+	<% end %>
+</div>

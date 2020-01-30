@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <%= form_with(model: @post, url: admin_post_path, method: :patch) do |f| %>
+        <div class="col-sm-3 col-sm-offset-2">
+            <h1>Edit</h1>
+            <p class="edit-picture">画像<%= f.attachment_field :image %></p>
+            <p class="edit-picture">動画 15sec<%= f.file_field :video %></p>
+        </div>
+        <div class="col-sm-5 col-sm-offset-1">
+            <div class="edit-content">
+                <p class="edit-text">国名 <%= f.select :country_id, Country.pluck(:country,:id) %></p>
+                <p class="edit-text">滞在期間 : <%= f.date_select :depature_date, use_month_numbers: true , start_year: 1930 %>
+                                                 ~ <%= f.date_select :return_date, use_month_numbers: true , start_year: 1930 %>
+                </p>
+                <p class="edit-text">ビザ : <label><%= f.radio_button :visa, :true, checked: true %> 有</label>
+                                              <label><%= f.radio_button :visa, :false %> 無</label>
+                </p>
+                <p class="edit-text">ワクチン : <%= f.select :vaccine_id, Vaccine.pluck(:name,:id) %></p>
+                <p class="edit-text">メモ : <%= f.text_area :memo %></p>
+            </div>
+        </div>
+        <div class="col-sm-3 col-sm-offset-7">
+            <div class="edit-action">
+                <h4><%= f.submit "Update" %>
+                <button class="btn btn-link"><%= link_to "Cancel", admin_post_path %></button>
+                </h4>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>

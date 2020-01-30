@@ -1,0 +1,7 @@
+<div class="container">
+	<h1 class="page-title">国名編集</h1>
+	<%= form_with model: @country, url: admin_country_path(params[:id]), local: true do |f| %>
+	<p><%= f.text_field :country %></p>
+	<%= f.submit "更新", class: "btn btn-sm" %>
+	<% end %>
+</div>
