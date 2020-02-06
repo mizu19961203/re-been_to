@@ -19,28 +19,53 @@
  @import "bootstrap";
 
 // sign-in,sign-up
-.sign-title {
-	margin-top: 20px;
+.form-title {
+  margin-bottom: 20px;
 }
-.sign-field {
+.form-group {
 	margin: 30px;
+  p {
+    padding: 10px;
+  }
 }
-.sign-actions{
+.actions{
 	padding-top: 30px;
 }
 
-// header
-.header {
-  width:70%;
-  margin:0 auto;
-  padding: 20px;
+body {
+  background-color: #ffffff;
 }
 
+#wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.kensaku {
+  font-size: 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+  margin: 0 auto;
+  .search-form {
+    padding-top: 10px;
+    .search_text {
+      margin: 10px;
+    }
+    .search_bottun {
+      margin: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}
 
 // post.index
 .box {
-	width:292px;
-	height: 292px;
+	width:280px;
+	height: 280px;
 	float: left;
   padding: 10px;
   text-align: center;
@@ -58,27 +83,14 @@
 	padding: 10px;
 }
 
-// post.new.edit
-.edit-picture {
-	margin-top: 40px;
-}
-.edit-content {
-	margin-top: 100px;
-	.edit-text {
-		margin: 20px;
-	}
-}
-.edit-action {
-	float: center;
-	margin-top: 30px;
-}
 
 // about
 .mv {
-  width: 100%;
+  width: 1000px;
   height: 700px;
   background-image: image-url('IMG_9229.jpg');
   background-size: cover;
+  margin: 0 auto;
   .mv-content {
    		width: 40%;
    		float: right;
@@ -89,10 +101,11 @@
   		color: #fff;
   		padding-top: 150px;
   		.mv-text {
-  			padding: 10px;
+  			margin: 20px;
+        font-size: 14px;
   		}
   		.mv-text-mid {
-  			padding-top: 30px;
+  			padding-top: 10px;
   		}
   		.mv-text-fin {
   			a:link { color: white; }
@@ -102,29 +115,33 @@
 }
 
 // slide
-#slide{
+#slide1{
     height: 450px;
     .image1 {
       background-image: image-url('IMG_9489.jpg');
-      }
-      .image2 {
-      background-image: image-url('E654D27F-8B1D-41CE-B3BC-00FC1A533306.jpg');
-      }
-      .image3 {
-      background-image: image-url('test1.jpg');
-      }
-      .image4 {
-      background-image: image-url('IMG_8865.jpg');
-      }
-      .image5 {
-      background-image: image-url('test2.jpg');
-      }
-      .image6 {
-      background-image: image-url('IMG_9229.jpg');
-      }
-      .image7 {
-      background-image: image-url('IMG_1504.jpeg');
-      }
+    }
+    .image2 {
+    background-image: image-url('E654D27F-8B1D-41CE-B3BC-00FC1A533306.jpg');
+    }
+    .image3 {
+    background-image: image-url('test1.jpg');
+    }
+}
+
+#slide2{
+    height: 200px;
+    .image4 {
+    background-image: image-url('IMG_8865.jpg');
+    }
+    .image5 {
+    background-image: image-url('test2.jpg');
+    }
+    .image6 {
+    background-image: image-url('IMG_9229.jpg');
+    }
+    .image7 {
+    background-image: image-url('IMG_1504.jpeg');
+    }
 }
 
 @media screen and (max-width:425px) {

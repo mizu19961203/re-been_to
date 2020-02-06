@@ -1,34 +1,38 @@
-<div class="container"> 　　
-	<div class="row" style="padding-bottom:30px;">
-
-        <div class="kensaku">
-                <h4><b>詳細検索</b></h4>
-                <%# 検索フォーム %>
-                <%= render 'posts/post_search', vaccines_search:@vaccines_search %>
-        </div>
-
-    	<div class="col-sm-10 col-sm-offset-1">
-    		<div id="slide">
+<div class="container" style="height: 1450px;"> 　　
+	<div class="row" style="margin:10px;">
+    	<div class="col-sm-8">
+    		<div id="slide1">
     			<div class="image1"></div>
     			<div class="image2"></div>
     			<div class="image3"></div>
-    			<div class="image4"></div>
-    			<div class="image5"></div>
-    			<div class="image6"></div>
-    			<div class="image7"></div>
     		</div>
     	</div>
+        <div class="col-sm-4">
+            <div class="kensaku"><%# 検索フォーム %>
+               <%= render 'posts/post_search', vaccines_search:@vaccines_search , countries_search:@countries_search %>
+            </div>
+        </div>
+        <div class="col-sm-4" style="margin-top: 10px;">
+            <div id="slide2">
+                <div class="image4"></div>
+                <div class="image5"></div>
+                <div class="image6"></div>
+                <div class="image7"></div>
+            </div>
+        </div>
     </div>
     <div class="row">
     	<% @posts.each do |post| %>
 	    	<div class="box">
-				<%= link_to attachment_image_tag(post, :image, :fill, 260, 260,format: 'jpeg',
-				fallback: "no_image.png",size: "260x260" ), post_path(post.id) %>
+				<%= link_to attachment_image_tag(post, :image, :fill, 250, 250,format: 'jpeg',
+				fallback: "no_image.png",size: "250x250" ), post_path(post.id) %>
 				<%=link_to Country.find(post.country_id).country , post_path(post.id) %>
 			</div>
 		<% end %>
     </div>
-    <div class="col-sm-10 col-sm-offset-1" style="text-align:center; padding:20px;">
-        <%= paginate @posts, class: "paginate" %>
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="text-align:center; padding:20px; font-size: 25px;">
+            <%= paginate @posts, class: "paginate" %>
+        </div>
     </div>
 </div>

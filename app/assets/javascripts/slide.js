@@ -1,14 +1,26 @@
 $(document).on('turbolinks:load', function () {
-    $("#slide").skippr({
+    $("#slide1").skippr({
         transition : 'fade',
-        speed : 1700,
+        speed : 2500,
         easing : 'easeOutQuart',
-        navType : 'block',
+        navType : 'bubble',
         childrenElementType : 'div',
         arrows : false,
         autoPlay : true,
-        autoPlayDuration : 1700,
+        autoPlayDuration : 3000,
         keyboardOnAlways : true,
-        hidePrevious : true
+        hidePrevious : false
+    });
+    $("#slide2").skippr({
+        transition : 'fade',
+        speed : 2500,
+        easing : 'easeOutQuart',
+        navType : 'bubble',
+        childrenElementType : 'div',
+        arrows : false,
+        autoPlay : true,
+        autoPlayDuration : 3000,
+        keyboardOnAlways : true,
+        hidePrevious : false
     });
 });
