@@ -5,7 +5,6 @@ before_action :authenticate_user!,:ensure_correct_user,{only: [:edit, :update]}
 		@post = Post.new
 	end
 
-
 	def create
     	@post = Post.new(post_params)
 	    @post.user_id = current_user.id

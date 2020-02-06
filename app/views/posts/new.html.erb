@@ -1,29 +1,36 @@
 <div class="container">
-    <div class="row">
-        <%= form_with(model: @post, url: posts_path, method: :post) do |f| %>
-        <div class="col-sm-3 col-sm-offset-2">
-            <h1>New-post</h1>
-            <p class="edit-picture">画像<%= f.attachment_field :image %></p>
-            <p class="edit-picture">動画 15sec<%= f.file_field :video %></p>
+    <%= form_with(model: @post, url: posts_path, method: :post) do |f| %>
+    <div class="row text-center">
+        <div class="col-sm-11">
+          <h1 class="form-title"><b>新規投稿</b></h1>
         </div>
-        <div class="col-sm-5 col-sm-offset-1">
-            <div class="edit-content">
-                <p class="edit-text">国名 <%= f.collection_select :country_id, Country.all,:id,:country %></p>
-                <p class="edit-text">滞在期間 : <%= f.date_select :depature_date, use_month_numbers: true , start_year: 1930 %>
-                                                 ~ <%= f.date_select :return_date, use_month_numbers: true , start_year: 1930 %>
-                </p>
-                <p class="edit-text">ビザ : <label><%= f.radio_button :visa, :true, checked: true %> 有</label>
-                                              <label><%= f.radio_button :visa, :false %> 無</label>
-                </p>
-                <p class="edit-text">ワクチン : <%= f.select :vaccine_id, Vaccine.pluck(:name,:id) %></p>
-                <p class="edit-text">メモ : <%= f.text_area :memo %></p>
+        <div class="col-sm-11 form-field">
+            <div class="form-group">
+                <p>国名 <%= f.collection_select :country_id, Country.all,:id,:country %></p>
+                <p>滞在期間 : <%= f.date_select :depature_date, use_month_numbers: true , start_year: 1930 %> ~ <%= f.date_select :return_date, use_month_numbers: true , start_year: 1930 %></p>
+                <p>ビザ : <label><%= f.radio_button :visa, :true, checked: true %> 有 </label>
+                         <label><%= f.radio_button :visa, :false %> 無 </label></p>
+                <p>ワクチン : <%= f.select :vaccine_id, Vaccine.pluck(:name,:id) %></p>
+                <p>メモ : <%= f.text_area :memo %></p>
+                <table style="margin: 0 auto;">
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px;">画像 : </td>
+                            <td><%= f.attachment_field :image %></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px;">動画(15sec)</td>
+                            <td><%= f.file_field :video %></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="col-sm-3 col-sm-offset-7">
-            <div class="edit-action">
-            <h4><%= f.submit '投稿' %></h4>
-            </div>
-        </div>
-        <% end %>
     </div>
+    <div class="row text-center">
+        <div class="actions">
+            <h4><%= f.submit '投稿' , class: "btn btn-lg btn-success active"%></h4>
+        </div>
+    </div>
+    <% end %>
 </div>
