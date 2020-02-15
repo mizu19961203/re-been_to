@@ -10,7 +10,7 @@
             <div class="text">
                 <p class="show-content">
                     <%= link_to "編集", edit_admin_post_path %> |
-                    <%= link_to "削除", admin_posts_path ,  method: :delete ,"data-confirm" => "本当に削除しますか？"%>
+                    <%= link_to "削除", admin_post_path ,  method: :delete ,"data-confirm" => "本当に削除しますか？"%>
                 </p>
                 <p class="show-content">by : <%= link_to @post.user.name , user_path(@post.user_id) %></p>
                 <p class="show-content">国名 : <%= Country.find(@post.country_id).country %></p>

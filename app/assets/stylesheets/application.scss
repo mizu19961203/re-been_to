@@ -39,17 +39,19 @@ body {
 #wrapper {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
-footer {
+.footer {
   margin-top: auto;
 }
 
 .kensaku {
-  font-size: 20px;
-  background-color: #f5f5f5;
+  font-size: 16px;
+  border: solid 2px;
   text-align: center;
-  margin: 0 auto;
+  margin-top: 35px;
+  border-radius: 30px;
   .search-form {
     padding-top: 10px;
     .search_text {
@@ -69,6 +71,7 @@ footer {
 	float: left;
   padding: 10px;
   text-align: center;
+  border-radius: 10px;
 }
 
 // post.show
@@ -130,6 +133,7 @@ footer {
 
 #slide2{
     height: 200px;
+    padding-bottom: 20px;
     .image4 {
     background-image: image-url('IMG_8865.jpg');
     }

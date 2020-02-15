@@ -8,11 +8,6 @@
     		</div>
     	</div>
         <div class="col-sm-4">
-            <div class="kensaku"><%# 検索フォーム %>
-               <%= render 'posts/post_search', vaccines_search:@vaccines_search , countries_search:@countries_search %>
-            </div>
-        </div>
-        <div class="col-sm-4" style="margin-top: 10px;">
             <div id="slide2">
                 <div class="image4"></div>
                 <div class="image5"></div>
@@ -20,6 +15,14 @@
                 <div class="image7"></div>
             </div>
         </div>
+        <div class="col-sm-4">
+            <div class="kensaku"><%# 検索フォーム %>
+               <%= render 'posts/post_search', vaccines_search:@vaccines_search , countries_search:@countries_search %>
+            </div>
+        </div>
+    </div>
+    <div class="row text-center" style="margin: 0 auto; padding: 20px;">
+        <h1><b>すべての投稿</b></h1>
     </div>
     <div class="row">
     	<% @posts.each do |post| %>
