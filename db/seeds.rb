@@ -32,9 +32,12 @@ User.create!(
 )
 
 Admin.create!(
-	name:  "test管理者",
-    email: "admin@admin",
-    password:  "111111")
+	{
+		name:  "test管理者",
+    	email: "admin@admin",
+    	password:  "111111"
+	}
+)
 
 
 countries = [
@@ -281,5 +284,5 @@ countries = [
 			"Zambia",
 			"Zimbabwe"]
 countries.each do |country|
-  Country.create(country: country)
+  Country.create!(country: country)
 end
