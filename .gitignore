@@ -34,3 +34,5 @@
 .DS_Store
 
 /.env
+
+/public/uploads/post/video/*

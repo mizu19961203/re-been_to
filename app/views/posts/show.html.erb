@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-sm-6 col-sm-offset-1">
             <%= attachment_image_tag(@post, :image, :fill, 500, 500, format: 'jpeg',fallback: "no_image.png",size: "500x500" ) %>
-            <p class="video">
+            <p class="video" style= "margin-top: 20px;">
                 <%= video_tag @post.video_url.to_s,loop: true, controls: true, width: 500, id: "mv"%>
             </p>
         </div>
@@ -10,8 +10,8 @@
             <div class="text">
                 <p class="show-content">
                     <% if @post.user_id == current_user.id %>
-                    <%= link_to "Edit", edit_post_path %> |
-                    <%= link_to "Destroy", post_path ,  method: :delete ,"data-confirm" => "本当に削除しますか？"%>
+                        <%= link_to "Edit", edit_post_path %> |
+                        <%= link_to "Destroy", post_path ,  method: :delete ,"data-confirm" => "本当に削除しますか？"%>
                     <% end %>
                 </p>
                 <p class="show-content">by : <%= link_to @post.user.name , user_path(@post.user_id) %></p>
