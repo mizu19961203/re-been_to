@@ -9,8 +9,8 @@ https://been-to.work
 
 # Features
 
-投稿での国名・旅程期間・ワクチンの選択
-国名・ワクチンを用いた検索
+* 投稿での国名・旅程期間・ワクチンの選択
+* 国名・ワクチンを用いた検索
 
 
 # Requirement
@@ -24,17 +24,17 @@ https://been-to.work
 
 # Usage
 
-git clone  https://github.com/mizu19961203/re-been_to
-rails demo.py
+* git clone  https://github.com/mizu19961203/re-been_to
+* rails demo.py
 
 # Note
 
-  ユーザーログイン
+  * ユーザーログイン
   ＊　テストユーザー：テスト徹子
   ＊　メールアドレス：test2@test.com
   ＊　パスワード：222222
 
-  管理者ログイン
+  * 管理者ログイン
   ＊　管理者：test管理者
   ＊　メールアドレス：admin@admin
   ＊　パスワード：111111
